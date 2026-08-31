@@ -1,16 +1,87 @@
-# React + Vite
+# 🧠 Memory Card Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple **Memory Card Game** built with **React**. The goal is to flip cards and find matching pairs.
 
-Currently, two official plugins are available:
+🚧 **Status: In Progress**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🎮 Features
 
-## React Compiler
+* 🃏 16 cards with 8 matching pairs
+* 🍇 Fruit emoji cards
+* 🔄 Flip cards when clicked
+* 🚫 Prevent already flipped/matched cards from being clicked
+* ⚛️ Built using React state and components
+* 🔀 Card initialization using `map()`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Technologies Used
 
-## Expanding the ESLint configuration
+* React
+* JavaScript
+* CSS
+* Vite
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📂 Project Structure
+
+```text
+src/
+├── components/
+│   ├── Card.jsx
+│   └── Gameheader.jsx
+│
+├── App.jsx
+├── App.css
+└── main.jsx
+```
+
+## 🧩 How It Works
+
+Each card is stored as an object:
+
+```js
+{
+  id: 0,
+  value: "🍇",
+  isFlipped: false,
+  isMatch: false
+}
+```
+
+The cards are displayed using `.map()`:
+
+```js
+cards.map((card) => {
+  return <Card card={card} />;
+});
+```
+
+When a card is clicked, its `isFlipped` value is changed to `true`.
+
+## 🚧 Currently Working On
+
+* [x] Create 16 cards
+* [x] Create 8 matching pairs
+* [x] Display cards using `.map()`
+* [x] Flip a card when clicked
+* [x] Prevent clicking an already flipped card
+* [ ] Compare two flipped cards
+* [ ] Detect matching pairs
+* [ ] Flip unmatched cards back
+* [ ] Keep matched cards flipped
+* [ ] Add score
+* [ ] Add move counter
+* [ ] Add restart/new game functionality
+* [ ] Add animations
+* [ ] Improve responsive design
+
+## 🚀 Future Improvements
+
+* Add a timer
+* Add difficulty levels
+* Add different card themes
+* Add winning screen
+* Add sound effects
+* Improve mobile experience
+
+## 📌 Status
+
+This project is currently **under development**. More game functionality will be added as I continue building and learning React.
