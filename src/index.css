@@ -1,114 +1,129 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 }
 
 html,
-body {
-  height: 100%;
-  width: 100%;
-}
-
+body,
 #root {
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
 }
 
 :root {
-  --m-bottom: 15px;
+    --m-bottom: 15px;
 
-  /* text-color */
-  --light: #fff;
-  --dark: #000;
+    /* Text colors */
+    --light: #fff;
+    --dark: #000;
 
-  /* background -color */
-  --static-bg: #644A9D;
+    /* Background color */
+    --static-bg: #644A9D;
 }
 
 .app {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--dark);
-  /* margin: auto 0; */
-  /* flex-direction: column; */
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark);
 }
 
+/* Game Header */
+
 .top {
-  text-align: center;
-  margin-bottom: var(--m-bottom);
-  background-color: #111522;
-  border-radius: 10px;
-  padding: 6px 0;
-  color: var(--light);
+    text-align: center;
+    margin-bottom: var(--m-bottom);
+    background-color: #111522;
+    border-radius: 10px;
+    padding: 10px;
+    color: var(--light);
 }
 
 .top h2 {
-  /* text-align: center; */
-  margin-bottom: var(--m-bottom);
-  font-weight: 500;
-  color: var(--light);
+    margin-bottom: var(--m-bottom);
+    font-weight: 500;
+    color: var(--light);
 }
+
+/* Score */
 
 .score {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  text-align: center;
-  margin-bottom: var(--m-bottom);
-}
-
-.top button {
-  padding: 8px 16px;
-  border-radius: 5px;
-  margin-bottom: var(--m-bottom);
-  border: none;
-  background-color: var(--static-bg);
-  color: var(--light);
-  cursor: pointer;
-}
-
-.card {
-  background-color: #10141E;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  cursor: pointer;
-}
-
-.card.flipped .card-front {
-  opacity: 0;
-  pointer-events: none;
-  transform: scale(0.9);
-}
-
-.card.flipped .card-back {
-  opacity: 1;
-}
-
-.board {
-  display: grid;
-  grid-template-columns: repeat(4, 100px);
-  grid-template-rows: repeat(4, 100px);
-  row-gap: 8px;
-  column-gap: 8px;
-  color: var(--light);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    margin-bottom: var(--m-bottom);
 }
 
 .title {
-  font-size: 13px;
+    font-size: 13px;
 }
 
 .bold {
-  font-weight: 500;
-  font-size: 23px;
-  color: var(--static-bg);
+    font-weight: 500;
+    font-size: 23px;
+    color: var(--static-bg);
+}
+
+/* Button */
+
+.top button {
+    padding: 8px 16px;
+    border-radius: 5px;
+    margin-bottom: var(--m-bottom);
+    border: none;
+    background-color: var(--static-bg);
+    color: var(--light);
+    cursor: pointer;
+}
+
+.top button:hover {
+    opacity: 0.9;
+}
+
+/* Game Board */
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 8px;
+}
+
+/* Card */
+
+.card {
+    background-color: #10141E;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--light);
+}
+
+.card-front {
+    display: none;
+}
+
+.card-back {
+    display: block;
+}
+
+/* Card Flip */
+
+.card.flipped .card-front {
+    display: block;
+    display: initial;
+}
+
+.card.flipped .card-back {
+    display: none;
 }
